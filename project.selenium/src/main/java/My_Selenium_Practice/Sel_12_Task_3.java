@@ -23,7 +23,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Sel_12_Task_3 {
+	
 	static WebDriver driver;
+	 static WebDriverWait oi;
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		IBrowsers("chrome", "https://www.amazon.com/");
@@ -66,6 +68,7 @@ public class Sel_12_Task_3 {
 		WebElement searchfield=driver.findElement(By.cssSelector("div[class='nav-search-field ']>input"));
 		searchfield.click();
 		searchfield.sendKeys("Phones");
+		
 		Thread.sleep(3000);
 		acct.keyDown(Keys.CONTROL).sendKeys("a").build().perform();
 		Thread.sleep(3000);
@@ -74,12 +77,22 @@ public class Sel_12_Task_3 {
 		acct.keyUp(Keys.UP).build().perform();
 		WebElement searchicon=driver.findElement(By.cssSelector("input[id='nav-search-submit-button']"));
 		searchicon.click();
+		
 		Thread.sleep(3000);
 		
-		
-//		WebElement text=driver.findElement(By.cssSelector("div[class='a-section a-spacing-small a-spacing-top-small']>span:first-of-type"));
-//		String amazonphonetext=text.getText();
-//		System.out.println(amazonphonetext);
+		oi=new WebDriverWait(driver, Duration.ofSeconds(30));
+		oi.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small']/child::span)[1]")));
+		Thread.sleep(3000);
+		WebElement text=driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small']/child::span)[1]"));
+		Thread.sleep(3000);
+		String amazonphonetext=text.getText();
+	System.out.println(amazonphonetext);
+	if(amazonphonetext.equals("1-16 of over 10,000")) {
+		System.out.println("the text is correct according to frs");
+	}
+	else {
+		System.out.println("the text is not correct");
+	}
 		
 		List<WebElement> all_link=driver.findElements(By.tagName("a"));
 		System.out.println( all_link.size());
@@ -114,7 +127,7 @@ public class Sel_12_Task_3 {
 		driver.navigate().refresh();
 		
 		
-		WebDriverWait oi=new WebDriverWait(driver, Duration.ofSeconds(30));
+		 oi=new WebDriverWait(driver, Duration.ofSeconds(30));
 		oi.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select[id='searchDropdownBox']")));
 		
 		

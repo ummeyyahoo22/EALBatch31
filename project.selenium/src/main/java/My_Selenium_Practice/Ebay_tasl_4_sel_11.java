@@ -27,6 +27,7 @@ public class Ebay_tasl_4_sel_11 {
 		Ibrowsers("edge", "https://www.ebay.com/");
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		Screenshotsebay();
+		
 		driver.navigate().back();
 		Thread.sleep(3000);
 		driver.navigate().forward();

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+  <test thread-count="5" name="Type Based Test">
+   <groups>
+   
+   <define name="Friday tests"></define>
+   <run>
+  
+  <include name="Friday tests"></include>
+  
+   <!-- 
+   <include name="sanity"></include>
+   <exclude name="smoke"></exclude>
+   <include name="regression"></include>
+   -->
+   
+   
+   </run>
+   
+   </groups>
+   <classes>
+      <class name="TestingEnv.Test4"/>
+    </classes>
+  </test> <!-- Type Based Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="SITallClasses">
+    <classes>
+      <class name="Task.Hyrtutorial_Task1_Sel_13"/>
+      <class name="Amazon.amazon1"/>
+      <class name="TestNG_Basic_Classes.Test2"/>
+      <class name="TestNG_Basic_Classes.Test1"/>
+      <class name="com.train.org.project.selenium.AppTest"/>
+      <class name="Amazon.Amazon2"/>
+      <class name="TestNG_Basic_Classes.Test3"/>
+      <class name="TestingEnv.Test4"/>
+      <class name="Amazon.basic"/>
+    </classes>
+  </test> <!-- SITallClasses -->
+</suite> <!-- Suite -->
